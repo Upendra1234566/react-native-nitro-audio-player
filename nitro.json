@@ -1,0 +1,30 @@
+{
+  "$schema": "https://nitro.margelo.com/nitro.schema.json",
+  "cxxNamespace": [
+    "nitroaudioplayer"
+  ],
+  "ios": {
+    "iosModuleName": "NitroAudioPlayer"
+  },
+  "android": {
+    "androidNamespace": [
+      "nitroaudioplayer"
+    ],
+    "androidCxxLibName": "NitroAudioPlayer"
+  },
+  "autolinking": {
+    "NitroAudioPlayer": {
+      "ios": {
+        "language": "swift",
+        "implementationClassName": "HybridNitroAudioPlayer"
+      },
+      "android": {
+        "language": "kotlin",
+        "implementationClassName": "HybridNitroAudioPlayer"
+      }
+    }
+  },
+  "ignorePaths": [
+    "**/node_modules"
+  ]
+}
