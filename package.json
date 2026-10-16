@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-audio-player",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react-native-nitro-audio-player is a react native package built with Nitro",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -16,8 +16,20 @@
   },
   "keywords": [
     "react-native",
-    "react-native-nitro-audio-player"
+    "audio-player",
+    "background-audio",
+    "music-player",
+    "nitro-modules",
+    "media-player",
+    "react-native-audio",
+    "audio-streaming",
+    "native-audio",
+    "background-playback"
   ],
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://www.buymeacoffee.com/upendrasingh"
+  },
   "files": [
     "src",
     "react-native.config.js",

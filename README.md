@@ -1,10 +1,14 @@
 # react-native-nitro-audio-player
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Upendra1234566/react-native-nitro-audio-player/main/banner.png" alt="react-native-nitro-audio-player banner" width="100%">
+</p> 
+
 A lightweight, native background audio player for React Native, built with [Nitro Modules](https://nitro.margelo.com/). Stream audio from a URL with full lock-screen / notification controls on both Android and iOS.
 
 [![Version](https://img.shields.io/npm/v/react-native-nitro-audio-player.svg)](https://www.npmjs.com/package/react-native-nitro-audio-player)
-[![Downloads](https://img.shields.io/npm/dm/react-native-nitro-audio-player.svg)](https://www.npmjs.com/package/react-native-nitro-audio-player)
-[![License](https://img.shields.io/npm/l/react-native-nitro-audio-player.svg)](https://github.com/patrickkabwe/react-native-nitro-audio-player/LICENSE)
+
+
 
 ## Features
 
