@@ -1,6 +1,6 @@
 
 
-package com.nitroaudioplayer
+package com.margelo.nitro.nitroaudioplayer
 
 import android.app.Notification
 import android.app.NotificationChannel
