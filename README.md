@@ -6,20 +6,17 @@
 [![img](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://github.com/sponsors/Upendra1234566)
 </p> 
 
-A lightweight, native background audio player for React Native, built with [Nitro Modules](https://nitro.margelo.com/). Stream audio from a URL with full lock-screen / notification controls on both Android and iOS.
-
-[![Version](https://img.shields.io/npm/v/react-native-nitro-audio-player.svg)](https://www.npmjs.com/package/react-native-nitro-audio-player)
-
-
+Background playback with lock-screen / notification controls on Android, and active playback controls on iOS.
+<!-- [![Version](https://img.shields.io/npm/v/react-native-nitro-audio-player.svg)](https://www.npmjs.com/package/react-native-nitro-audio-player) -->
 
 ## Features
 
-- Stream audio from any remote URL
+- tream audio from any remote URL
 - Background playback with a native media notification (Android) and Now Playing info (iOS)
 - Track metadata: title, artist and artwork image
 - Lock-screen and notification controls (play, pause, stop)
 - Built on Nitro Modules for fast, type-safe JS ↔ native calls
-- Automatic cleanup when playback finishes or the notification is dismissed
+- Automatic cleanup when playback finishes or the notification is dismissedS
 
 ## Requirements
 
@@ -207,14 +204,6 @@ cd ios && pod install && cd ..
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-```bash
-git clone https://github.com/patrickkabwe/react-native-nitro-audio-player.git
-cd react-native-nitro-audio-player
-npm install
-npm run codegen   # regenerate Nitro bindings
-cd example && npm install
-```
 
 ## Credits
 
