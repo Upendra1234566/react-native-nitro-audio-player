@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-audio-player",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "react-native-nitro-audio-player is a react native package built with Nitro",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -56,12 +56,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upendrasingh/react-native-nitro-audio-player.git"
+    "url": "https://github.com/Upendra1234566/react-native-nitro-audio-player"
   },
   "author": "Upendra Singh",
   "license": "MIT",
-  "bugs": "https://github.com/upendrasingh/react-native-nitro-audio-player/issues",
-  "homepage": "https://github.com/upendrasingh/react-native-nitro-audio-player#readme",
+  "bugs": "https://github.com/Upendra1234566/react-native-nitro-audio-player/issues",
+  "homepage": "https://github.com/Upendra1234566/react-native-nitro-audio-player#readme",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
