@@ -1,7 +1,7 @@
 # react-native-nitro-audio-player
 
 <p align="center">
-  <img width="1200" height="220" alt="banner" src="https://github.com/user-attachments/assets/04f8a08a-f032-455b-94e7-fc1aa5d759b6" />
+  <img width="1200" height="220" alt="banner" src="./assets/banner.png" />
 
 [![img](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://github.com/sponsors/Upendra1234566)
 </p> 
