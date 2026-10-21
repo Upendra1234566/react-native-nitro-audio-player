@@ -9,29 +9,30 @@ import {
   Alert,
   Image,
 } from 'react-native';
-
 import { AudioPlayer } from 'react-native-nitro-audio-player';
 
-const SONGS = [
-  { 
-    id: '1', 
-    title: 'Apna Bana Le', 
-    artist: 'Arijit Singh', 
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500' 
+interface Track {
+  id: string;
+  title: string;
+  artist: string;
+  url: string;
+  image: string;
+}
+
+const SONGS: Track[] = [
+  {
+    id: '1',
+    title: 'Nitro Aduio',
+    artist: 'Voice',
+    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500',
   },
-  { 
-    id: '2', 
-    title: '52 Gaj Ka Daman', 
-    artist: 'Renuka Panwar', 
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', 
-    image: 'https://images.unsplash.com/photo-1533174000220-4b2aeb289a01?w=500' 
-  },
+  
 ];
 
 export default function App() {
-  const [currentSong, setCurrentSong] = useState(SONGS[0]);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentSong, setCurrentSong] = useState<Track>(SONGS[0]);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   useEffect(() => {
     requestNotificationPermission();
@@ -40,9 +41,11 @@ export default function App() {
   const requestNotificationPermission = async () => {
     if (Platform.OS === 'android' && Platform.Version >= 33) {
       try {
-        await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
+        await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS
+        );
       } catch (err) {
-        console.warn(err);
+        console.warn('Failed to get notification permission:', err);
       }
     }
   };
@@ -53,11 +56,16 @@ export default function App() {
         AudioPlayer.pause();
         setIsPlaying(false);
       } else {
-        AudioPlayer.play(currentSong.url, currentSong.title, currentSong.artist, currentSong.image);
+        AudioPlayer.play(
+          currentSong.url,
+          currentSong.title,
+          currentSong.artist,
+          currentSong.image
+        );
         setIsPlaying(true);
       }
     } catch (error) {
-      Alert.alert('Error', String(error));
+      Alert.alert('Playback Error', String(error));
     }
   };
 
@@ -70,7 +78,7 @@ export default function App() {
     }
   };
 
-  const changeSong = (song) => {
+  const changeSong = (song: Track) => {
     setCurrentSong(song);
     AudioPlayer.play(song.url, song.title, song.artist, song.image);
     setIsPlaying(true);
@@ -78,13 +86,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Nitro Player Audio Player</Text>
+      <Text style={styles.header}>Nitro Audio Player</Text>
+
+      {/* Active Track Card */}
       <View style={styles.card}>
         <Image source={{ uri: currentSong.image }} style={styles.albumArt} />
         <Text style={styles.title}>{currentSong.title}</Text>
         <Text style={styles.artist}>{currentSong.artist}</Text>
 
-        {/* Player Controls */}
         <View style={styles.controlsRow}>
           <TouchableOpacity style={styles.playBtn} onPress={handlePlayPause}>
             <Text style={styles.btnText}>{isPlaying ? '⏸️ Pause' : '▶️ Play'}</Text>
@@ -96,20 +105,28 @@ export default function App() {
         </View>
       </View>
 
+      {/* Playlist */}
       <Text style={styles.listHeader}>Available Tracks</Text>
 
       {SONGS.map((song) => (
-        <TouchableOpacity 
-          key={song.id} 
-          style={[styles.songItem, currentSong.id === song.id && styles.activeSongItem]}
+        <TouchableOpacity
+          key={song.id}
+          style={[
+            styles.songItem,
+            currentSong.id === song.id && styles.activeSongItem,
+          ]}
           onPress={() => changeSong(song)}
         >
-          <Text style={[styles.songItemText, currentSong.id === song.id && styles.activeSongText]}>
+          <Text
+            style={[
+              styles.songItemText,
+              currentSong.id === song.id && styles.activeSongText,
+            ]}
+          >
             {song.title} - {song.artist}
           </Text>
         </TouchableOpacity>
       ))}
-
     </View>
   );
 }
@@ -127,7 +144,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#111827',
     marginBottom: 30,
-    letterSpacing: 1,
+    letterSpacing: 0.5,
   },
   card: {
     backgroundColor: '#FFFFFF',
@@ -140,12 +157,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 10,
     elevation: 5,
-    marginBottom: 40,
+    marginBottom: 30,
   },
   albumArt: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
+    width: 180,
+    height: 180,
+    borderRadius: 90,
     marginBottom: 20,
     backgroundColor: '#E5E7EB',
   },
@@ -159,7 +176,7 @@ const styles = StyleSheet.create({
   artist: {
     fontSize: 14,
     color: '#6B7280',
-    marginBottom: 24,
+    marginBottom: 20,
     textAlign: 'center',
   },
   controlsRow: {
@@ -167,20 +184,20 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   playBtn: {
-    backgroundColor: '#3B82F6', 
+    backgroundColor: '#3B82F6',
     paddingVertical: 12,
-    paddingHorizontal: 25,
+    paddingHorizontal: 24,
     borderRadius: 30,
   },
   stopBtn: {
     backgroundColor: '#EF4444',
     paddingVertical: 12,
-    paddingHorizontal: 25,
+    paddingHorizontal: 24,
     borderRadius: 30,
   },
   btnText: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: '600',
   },
   listHeader: {
@@ -188,13 +205,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#4B5563',
     alignSelf: 'flex-start',
-    marginBottom: 10,
+    marginBottom: 12,
   },
   songItem: {
     width: '100%',
     backgroundColor: '#FFFFFF',
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 12,
     marginBottom: 10,
     borderWidth: 1,
     borderColor: '#E5E7EB',
