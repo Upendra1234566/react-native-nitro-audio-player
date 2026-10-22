@@ -6,17 +6,18 @@
 [![img](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://github.com/sponsors/Upendra1234566)
 </p> 
 
-Background playback with lock-screen / notification controls on Android, and active playback controls on iOS.
+Background playback with lock-screen / notification controls on Android, and active playback controls on iOS. Supports both **Remote Network Streams** and **Offline Local Raw Audio Resources**.
 <!-- [![Version](https://img.shields.io/npm/v/react-native-nitro-audio-player.svg)](https://www.npmjs.com/package/react-native-nitro-audio-player) -->
 
 ## Features
 
-- tream audio from any remote URL
+- Stream audio from any remote URL (HTTPS / HTTP)
+- **Local Offline Audio Playback** via Android `res/raw` resources or resource URIs
 - Background playback with a native media notification (Android) and Now Playing info (iOS)
-- Track metadata: title, artist and artwork image
+- Track metadata: title, artist, and artwork image
 - Lock-screen and notification controls (play, pause, stop)
 - Built on Nitro Modules for fast, type-safe JS ↔ native calls
-- Automatic cleanup when playback finishes or the notification is dismissedS
+- Automatic cleanup when playback finishes or the notification is dismissed
 
 ## Requirements
 
